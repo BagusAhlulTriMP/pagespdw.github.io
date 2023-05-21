@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard - A Day In My Life</title>
+    <link rel="stylesheet" type="text/css" href="UCP.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <nav>
+        <div class="navbar">
+            <h1>A Day In My Life</h1>
+            <ul>
+                <li><a href="#">Today</a></li>
+                <li><a href="#">Tomorrow</a></li>
+                <li><a href="#">This Month</a></li>
+            </ul>
+        </div>
+    </nav>
+    <header>
+        <div class="header-left">
+            <p id="greeting"></p>
+        </div>
+        <div class="header-right">
+            <p id="datetime"></p>
+        </div>
+    </header>
+    <section>
+        <div class="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item">
+                <img src="welcome umy.jpg" alt="Selamat Datang di UMY"> 
+              </div>
+              <div class="carousel-item">
+                <img src="umy.jpg" alt="UMY">
+              </div>
+              <div class="carousel-item">
+                <img src="gedung kembar.jpg" alt="Tampak Depan UMY">
+              </div>
+            </div>
+            <div class="carousel-controls">
+              <button onclick="carouselPrev()">&#10094;</button>
+              <button onclick="carouselNext()">&#10095;</button>
+            </div>
+          </div>
+        
+          <script>
+            var carouselIndex = 0;
+            var carouselItems = document.getElementsByClassName("carousel-item");
+        
+            function carouselNext() {
+              carouselIndex++;
+              if (carouselIndex >= carouselItems.length) {
+                carouselIndex = 0;
+              }
+              updateCarousel();
+            }
+        
+            function carouselPrev() {
+              carouselIndex--;
+              if (carouselIndex < 0) {
+                carouselIndex = carouselItems.length - 1;
+              }
+              updateCarousel();
+            }
+        
+            function updateCarousel() {
+              for (var i = 0; i < carouselItems.length; i++) {
+                carouselItems[i].style.transform = "translateX(" + (-carouselIndex * 100) + "%)";
+              }
+            }
+          </script>
+    </section>
+    <section>
+        <div class="card">
+            <img src="morning.jpeg" alt="Menghirup Udara Segar" width="70%">
+            <h3>Pagi Hari</h3>
+            <p>Menghirup udara di pagi hari sangat membuat tubuh kita terasa nyaman, sehat, segar kembali.itulah kenapa saya selalu keluar kamar sejenak untuk menyambut pagi hari.karena disaat itu orang-orang masih ada yang tertidur dan udara masih sangat segar untuk dihirup.</p>
+        </div>
+        <div class="card">
+            <img src="Belajar.jpg" alt="Kuliah" width="75%">
+            <h3>Belajar</h3>
+            <p>Belajar juga salah satu kegiatan keseharian saya,baik di kampus maupun di luar kampus.biasanya diluar kampus saya belajar bisa melalui media online seperti youtube,google atau sedikit mencoba mengulang apa yang sudah diajarkan dikelas. </p>
+        </div>
+        <div class="card">
+            <img src="Bermain Game.jpg" alt="Mengisi waktu luang" width="90%">
+            <h3>Main Game</h3>
+            <p>Saya biasa memainkan hanya satu game yaitu valorant disaat ada waktu luang saya selalu bermain game ini.</p>
+        </div>
+    </section>
+    <footer>
+        <p>@ UCP 1 Pengembangan Desain Web - 2023 - Created By Bagus Ahlul </p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
